@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnflyasiya Hesablama</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./assets/calculator.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <h1 class="site-title">İnflyasiya Hesablama</h1>
+            <p class="site-subtitle">Öz qiymət məlumatlarınızı daxil edin və təsiri görün</p>       <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="general-calculator.html">Calculator</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+    <!-- CALCULATOR SECTION -->
+    <section class="calculator">
+        <div class="container">
+            <h2 class="section-title">İnflyasiya faizini hesabla</h2>
+
+            <form id="inflation-form">
+                <div class="input-group">
+                    <label for="oldPrice">Əvvəlki qiymət:</label>
+                    <input type="number" id="oldPrice" required placeholder="Məsələn: 100">
+                </div>
+
+                <div class="input-group">
+                    <label for="newPrice">Yeni qiymət:</label>
+                    <input type="number" id="newPrice" required placeholder="Məsələn: 120">
+                </div>
+
+                <div class="input-group">
+                    <label for="incomeGroup">Gəlir qrupu:</label>
+                    <select id="incomeGroup">
+                        <option value="low">Aşağı gəlir</option>
+                        <option value="middle">Orta gəlir</option>
+                        <option value="high">Yüksək gəlir</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Hesabla</button>
+            </form>
+
+            <!-- Nəticə sahəsi -->
+            <div class="result">
+                <h3>Nəticə:</h3>
+                <p id="inflationResult">İnflyasiya faizi: -- %</p>
+                <p id="incomeImpact">Gəlir qrupuna təsir: --</p>
+            </div>
+
+            <!-- Chart -->
+            <canvas id="priceChart" width="400" height="200"></canvas>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Baku 2025 | Müəllim: Tural Qocayev | Fənn: İqtisadiyyata giriş</p>
+        </div>
+    </footer>
+
+    <!-- External JS -->
+    <script src="./assets//js/main.js"></script>
+
+</body>
+</html>

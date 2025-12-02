@@ -1,0 +1,137 @@
+/* body {
+    background: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+} */
+
+.calculator {
+    width: 330px;
+    background: #000;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 20px #000;
+}
+
+.display {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: right;
+    font-size: 2.5rem;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    height: 60px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    background: #333;
+    color: white;
+    padding: 20px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.gray {
+    background: #a5a5a5;
+    color: black;
+}
+
+.orange {
+    background: #ff9500;
+    color: white;
+}
+
+.wide {
+    grid-column: span 2;
+}
+.calculator-section {
+    padding: 60px 0;
+    background-color: #f1f5f9;
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    width: 320px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    margin: 60px auto;
+}
+
+.display {
+    height: 70px;
+    background: #e6eaf1;
+    color: #333;
+    font-size: 2rem;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: right;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    padding: 18px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: #1e3c72;
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background-color: #2a5298;
+}
+
+.function {
+    background-color: #a5a5a5;
+    color: black;
+}
+
+.equal {
+    background-color: #1e3c72;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .calculator {
+        width: 90%;
+    }
+}
