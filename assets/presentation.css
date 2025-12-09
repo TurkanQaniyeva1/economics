@@ -1,0 +1,1022 @@
+/* ===== Presentation Fullscreen ===== */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    background: #0f2027;
+    /* gradient fon */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Presentation Container */
+.presentation {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+/* Slide Styling */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 80px;
+    box-sizing: border-box;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.7s ease;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+}
+
+/* Active Slide */
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    animation: fadeIn 0.8s ease;
+}
+
+/* Headings */
+.slide h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Paragraphs */
+.slide p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 10px 0 25px 0;
+    animation: slideUp 0.8s ease;
+}
+
+/* Lists */
+.slide ul,
+.slide ol {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    font-size: 1.5rem;
+    line-height: 2;
+    list-style-position: inside;
+}
+
+/* Table */
+.slide table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.slide table th,
+.slide table td {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 15px;
+}
+
+.slide table th {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Controls */
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.controls button {
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.controls button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+    .slide h2 {
+        font-size: 2.2rem;
+    }
+
+    .slide p,
+    .slide ul,
+    .slide ol {
+        font-size: 1.3rem;
+    }
+
+    .slide table {
+        width: 95%;
+        font-size: 1.2rem;
+    }
+
+    .slide {
+        padding: 40px 20px;
+    }
+}
+
+/* ////////////////////// */
+
+
+.slide-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slide-content .text {
+    flex: 1;
+    padding-right: 20px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: textFade 1s forwards 0.3s;
+    text-align: left;
+}
+
+.slide-content .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: imageFade 1s forwards 0.6s;
+}
+
+.slide-content img {
+    /* max-width: 100%; */
+    width: 500px;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes textFade {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes imageFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide 2 content animations - oxşar Slide 1 */
+.slide-content .text {
+    flex: 1;
+    padding-right: 20px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: textFade 1s forwards 0.3s;
+}
+
+.slide-content .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: imageFade 1s forwards 0.6s;
+}
+
+
+
+
+
+.slide-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slide-content .text {
+    flex: 1;
+    padding-right: 20px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: textFade 1s forwards 0.3s;
+}
+
+.slide-content .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: imageFade 1s forwards 0.6s;
+}
+
+.graph {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #fff;
+    position: relative;
+    margin: 0 auto;
+}
+
+.axes .x-axis {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+
+.axes .y-axis {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #fff;
+}
+
+.graph-container {
+    width: 40%;
+    height: 60%;
+    margin: 0 auto;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.graph-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Demand və Supply xəttləri üçün animasiya */
+#demand,
+#supply {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 2s ease;
+}
+
+/* Slide aktiv olduqda xətt animasiyası */
+.slide.active #demand {
+    stroke-dashoffset: 0;
+}
+
+.slide.active #supply {
+    stroke-dashoffset: 0;
+}
+
+/* Qrafikdə başlıqlar */
+h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.slide-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.slide-content ol {
+    text-align: left;
+    font-size: 1.2rem;
+    max-width: 50%;
+}
+
+.animation-box {
+    width: 34%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animation-box line {
+    stroke-dasharray: 185;
+    /* xətt uzunluğu təqribi */
+    stroke-dashoffset: 185;
+    transition: stroke-dashoffset 2s ease;
+}
+
+.slide.active .animation-box line {
+    stroke-dashoffset: 0;
+}
+
+.slide-image {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.slide-image img {
+    max-width: 70%;
+    height: 270px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.animation-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 300px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.bar {
+    width: 40px;
+    background-color: #f39c12;
+    position: relative;
+    animation: grow 2s ease-in-out infinite alternate;
+}
+
+.bar::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #3498db;
+    animation: pulse 1s ease-in-out infinite alternate;
+}
+
+.step1 {
+    animation-delay: 0s;
+}
+
+.step2 {
+    animation-delay: 0.5s;
+}
+
+.step3 {
+    animation-delay: 1s;
+}
+
+.step4 {
+    animation-delay: 1.5s;
+}
+
+.step5 {
+    animation-delay: 2s;
+}
+
+@keyframes grow {
+    from {
+        height: 50px;
+    }
+
+    to {
+        height: 200px;
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: translateX(-50%) scale(0.5);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/*  */
+
+
+
+
+.income-impact {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.impact-card {
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.impact-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+#slide5 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.impact-compare {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.compare-card {
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.compare-card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.compare-card img {
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+/* ---------- Slide 9 styles ---------- */
+#slide-9 .slide-inner {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Text column */
+#slide-9 .text {
+    flex: 1;
+    min-width: 320px;
+    text-align: left;
+}
+
+#slide-9 h2 {
+    font-size: 2.4rem;
+    margin-bottom: 18px;
+    color: #fff;
+    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.effects-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.effects-list li {
+    margin-bottom: 14px;
+    padding-left: 6px;
+    position: relative;
+    padding-right: 10px;
+}
+
+/* küçük vurğu nöqtəsi */
+.effects-list li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(135deg, #ffb86b, #ff7a7a);
+    border-radius: 50%;
+    position: absolute;
+    left: -18px;
+    top: 10px;
+    box-shadow: 0 4px 10px rgba(255, 120, 80, 0.15);
+}
+
+/* Visual column */
+#slide-9 .visual {
+    flex: 0 0 380px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: center;
+    justify-items: center;
+    margin-top: 100px;
+}
+
+/* Icon cards */
+.icon-card {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    transform: translateY(20px);
+    /* opacity: 0; */
+    transition: transform 0.6s cubic-bezier(.2, .9, .3, 1), opacity 0.6s ease;
+}
+
+/* SVG ikon stili */
+.icon-card .icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    color: #ffd27a;
+    /* default icon color */
+}
+
+/* icon caption */
+.icon-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* aktiv slayd gəldikdə animasiya */
+.slide.active #slide-9 .icon-card,
+#slide-9.slide-active .icon-card {
+    /* fallback selector */
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* daha yaxşı sekans animasiyası */
+#slide-9 .icon-card:nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+#slide-9 .icon-card:nth-child(2) {
+    transition-delay: 0.35s;
+}
+
+#slide-9 .icon-card:nth-child(3) {
+    transition-delay: 0.55s;
+}
+
+/* İkon xüsusi rənglər ilə vurğulanır */
+.icon.money {
+    color: #7be1a7;
+}
+
+/* yaşıl */
+.icon.chart {
+    color: #7ec8ff;
+}
+
+/* mavi */
+.icon.factory {
+    color: #ffcc80;
+}
+
+/* narıncı */
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+    #slide-9 .slide-inner {
+        flex-direction: column;
+        gap: 22px;
+        padding: 20px;
+    }
+
+    #slide-9 .visual {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    #slide-9 .text {
+        text-align: center;
+    }
+
+    #slide-9 h2 {
+        font-size: 1.9rem;
+    }
+
+    .effects-list {
+        font-size: 1.05rem;
+    }
+}
+
+#slide10 {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    gap: 40px;
+}
+
+#slide10 .content {
+    width: 50%;
+}
+
+#slide10 h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.social-list {
+    font-size: 20px;
+    line-height: 1.6;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.social-list li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.social-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2b5eff;
+    font-size: 28px;
+    line-height: 0;
+}
+
+#slide10 .visual {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.people-anim {
+    display: flex;
+    gap: 35px;
+    align-items: flex-end;
+}
+
+/* People */
+.person {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.person .circle {
+    width: 60px;
+    height: 60px;
+    background: #2b5eff;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: rise 1.5s ease forwards;
+}
+
+/* 3 levels of income */
+.person.low .circle {
+    width: 50px;
+    height: 50px;
+    background: #ff4242;
+    animation-delay: 0.3s;
+}
+
+.person.mid .circle {
+    width: 70px;
+    height: 70px;
+    background: #ffaa2b;
+    animation-delay: 0.6s;
+}
+
+.person.high .circle {
+    width: 90px;
+    height: 90px;
+    background: #2b5eff;
+    animation-delay: 0.9s;
+}
+
+/* Animation */
+@keyframes rise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    #slide10 {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    #slide10 .content,
+    #slide10 .visual {
+        width: 100%;
+    }
+
+    .people-anim {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+#slide11 {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    gap: 40px;
+    flex-direction: row;
+}
+
+#slide11 .content {
+    width: 50%;
+}
+
+#slide11 h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.business-list {
+    font-size: 20px;
+    line-height: 1.6;
+    list-style: none;
+    padding: 0;
+}
+
+.business-list li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.business-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ffaa2b;
+    font-size: 28px;
+    line-height: 0;
+}
+
+#slide11 .visual {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.factory-anim {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.factory {
+    position: relative;
+    width: 150px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.factory .building {
+    width: 100px;
+    height: 120px;
+    background: #7ec8ff;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.factory .smoke {
+    position: absolute;
+    bottom: 140px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: smokeRise 3s infinite ease-in-out;
+}
+
+.factory .smoke1 {
+    left: 10px;
+    animation-delay: 0s;
+}
+
+.factory .smoke2 {
+    left: 40px;
+    animation-delay: 1s;
+}
+
+.factory .smoke3 {
+    left: 70px;
+    animation-delay: 2s;
+}
+
+.factory p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+}
+
+@keyframes smokeRise {
+    0% {
+        transform: translateY(0) scale(0.6);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateY(-50px) scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-100px) scale(0.6);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    #slide11 {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    #slide11 .content,
+    #slide11 .visual {
+        width: 100%;
+    }
+}
+
+/* ---------- Slide 12: Nəticə ---------- */
+#slide12 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 80px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.7s ease;
+}
+
+#slide12.active {
+    opacity: 1;
+    transform: translateX(0);
+    animation: fadeIn 0.8s ease;
+}
+
+#slide12 h2 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+#slide12 p {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    max-width: 900px;
+    animation: slideUp 0.8s ease;
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+    #slide12 h2 {
+        font-size: 2.2rem;
+    }
+
+    #slide12 p {
+        font-size: 1.3rem;
+        text-align: justify;
+    }
+
+    #slide12 {
+        padding: 40px 20px;
+    }
+}
