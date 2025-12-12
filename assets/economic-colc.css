@@ -1,0 +1,218 @@
+/* ===== Ümumi Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ===== Body və Header ===== */
+body {
+    /* background: #162D54; */
+    color: #fff;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background: #162D54 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+
+}
+
+header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+#inflation-calculation{
+    background-color: #162D54;
+}
+/* ===== Main Section ===== */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* ===== Calculation Section ===== */
+.calc-section {
+    background: rgba(255,255,255,0.05);
+    padding: 40px 50px;
+    border-radius: 20px;
+    max-width: 600px;
+    color: white;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Başlıq */
+.calc-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
+
+/* Input sahələri */
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.inputs label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+}
+
+.inputs input {
+    margin-top: 5px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.inputs input:focus {
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+/* Hesabla düyməsi */
+button#calculateBtn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.2rem;
+    background: #ff7a18;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255,122,24,0.4);
+}
+
+button#calculateBtn:hover {
+    background: #ff8c42;
+    transform: translateY(-2px);
+}
+
+/* Nəticələr */
+.results {
+    margin-top: 30px;
+    background: #162D54;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+.results p {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+}
+
+.results span {
+    font-weight: 700;
+    color: #ffd27a;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsiv ===== */
+@media screen and (max-width: 650px) {
+    .calc-section {
+        padding: 30px 20px;
+    }
+
+    .inputs input {
+        font-size: 1rem;
+    }
+
+    button#calculateBtn {
+        font-size: 1.1rem;
+    }
+}
+/* ===== Header Navigation ===== */
+.header {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 20px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.header .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header .site-title {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
+
+.header .site-subtitle {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+/* Navigation Menu */
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.05);
+}
+
+.nav-menu ul li a:hover {
+    background: #ff7a18;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ===== Footer ===== */
+.footer {
+    background: #162D54 ;
+
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+    margin-top: 50px;
+}
+
+.footer p {
+    font-size: 0.95rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+}

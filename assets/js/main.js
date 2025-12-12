@@ -74,3 +74,16 @@ form.addEventListener('submit', function(e) {
     if(priceChart) priceChart.destroy();
     priceChart = new Chart(ctx, config);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
