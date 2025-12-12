@@ -120,20 +120,18 @@ html {
 }
 
 .controls button {
-    background: rgba(0, 0, 0, 0.3);
+    background: transparent;
     border: none;
-    color: #fff;
+    color: #112229;
     font-size: 2.5rem;
     padding: 18px;
     border-radius: 50%;
     cursor: pointer;
     pointer-events: all;
     transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .controls button:hover {
-    background: rgba(255, 255, 255, 0.3);
     transform: scale(1.3);
 }
 
@@ -1033,4 +1031,145 @@ h2 {
     #slide12 {
         padding: 40px 20px;
     }
+}
+
+
+
+
+
+
+
+/*  */
+/* ===== Slide 13 - Mənbələr ===== */
+
+#slide-13 {
+    text-align: left;
+    padding-left: 60px;
+}
+
+#slide-13 h2 {
+    font-size: 2.6rem;
+    margin-bottom: 35px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    color: #fff;
+}
+
+#slide-13 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 900px;
+}
+
+#slide-13 ul li {
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+    padding-left: 26px;
+    position: relative;
+    color: rgba(255,255,255,0.92);
+    word-break: break-word;
+}
+
+/* Custom bullet icon */
+#slide-13 ul li::before {
+    content: '🔹';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+    color: #6ecbff;
+    text-shadow: 0 3px 10px rgba(0,150,255,0.35);
+}
+
+/* Hover effekti */
+#slide-13 ul li:hover {
+    color: #ffffff;
+    transform: translateX(4px);
+    transition: 0.25s ease;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    #slide-13 {
+        padding-left: 25px;
+    }
+    #slide-13 h2 {
+        text-align: center;
+        font-size: 3.1rem;
+    }
+    #slide-13 ul li {
+        font-size: 1.15rem;
+    }
+}
+
+
+/*  */
+
+.thanks-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+
+    text-align: center;
+    padding: 30px;
+    animation: fadeIn 1s ease forwards;
+}
+
+.thanks-slide h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: glow 2s infinite alternate ease-in-out;
+}
+
+.team {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+
+    width: 500px;        /* 🔥 genişlik əlavə edildi */
+    max-width: 90%;      /* 🔥 responsive qalsın */
+    text-align: center;  /* 🔥 iç yazılar ortalansın */
+}
+
+.team h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.team li {
+    font-size: 20px;
+    margin: 5px 0;
+    transition: transform 0.3s;
+}
+
+.team li:hover {
+    transform: translateX(5px);
+    color: #f0d37a;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #fff; }
+    to   { text-shadow: 0 0 20px #ffd36b; }
 }
